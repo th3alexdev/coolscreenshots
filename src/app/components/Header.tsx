@@ -26,10 +26,10 @@ export function Header() {
     <header className="py-10 px-8 text- xl w-full outline-none outline-[#0000001c]">
       <div className="flex justify-between max-w-[950px] mx-auto">
         <Image
+          className="w-36 pointer-events-none"
           width={144}
           height={36}
           src="/assets/svg/coolscreenshots.svg"
-          className="w-36"
           alt="(?)"
         />
         <div className="flex gap-8 items-center">
@@ -45,13 +45,13 @@ export function Header() {
             </Button>
           </Dropdown>
           <div className="hidden 8xs:flex gap-8 items-center justify-between">
-            <Link className="hover:underline text-bold" href={'#'}>
+            <Link className="hover:underline text-bold text-lg" href={'#'}>
               About
             </Link>
-            <Link className="hover:underline text-bold" href={'#'}>
+            <Link className="hover:underline text-bold text-lg" href={'#'}>
               Contact
             </Link>
-            <button className="flex justify-center items-center gap-2 uppercase bg-main-hover-color text-main-color px-2.5 py-0.5 rounded-md">
+            <button className="flex justify-center items-center gap-2 uppercase bg-main-hover-color text-main-color px-2.5 py-0.5 rounded-md text-lg">
               <LanguageIcon />
               en
             </button>
