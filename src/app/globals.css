@@ -3,19 +3,45 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  body {
+    cursor: url('/assets/cursor/default.svg'), auto;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@media (hover: hover) and (pointer: fine) {
+  p,
+  span,
+  input[type='text'],
+  textarea,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .text-cursor {
+    cursor: url('/assets/cursor/blink.svg'), text;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  a,
+  button,
+  select,
+  option,
+  svg,
+  option,
+  input[type='radio'],
+  ::-webkit-scrollbar,
+  input[type='submit'],
+  input[type='checkbox'],
+  .pointer {
+    cursor: url('/assets/cursor/pointer.svg'), pointer !important;
+  }
 }
