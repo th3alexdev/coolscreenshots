@@ -10,14 +10,12 @@ const HEADERS = {
 };
 
 export function TwitterForm() {
-  const [state, setState] = useState(null);
-
   const handleInput = async (e: React.FormEvent<HTMLInputElement>) => {
     const value = (e.target as HTMLInputElement).value;
     console.log('value 👉', value);
 
-    let link = value;
-    let isValid =
+    const link = value;
+    const isValid =
       link.startsWith(X_PROTOCOL) || link.startsWith(TWITTER_PROTOCOL);
 
     if (isValid) {
@@ -42,7 +40,6 @@ export function TwitterForm() {
 
       const tweetData = await response.json();
       console.log('Información del tweet', tweetData);
-      setState(tweetData);
     } else {
       console.log('El enlace no es válido');
     }
