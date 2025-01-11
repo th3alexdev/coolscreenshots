@@ -9,7 +9,7 @@
 }
 
 @media (hover: hover) and (pointer: fine) {
-  body {
+  :root {
     cursor: url('/assets/cursor/default.svg'), auto;
   }
 }
