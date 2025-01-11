@@ -27,7 +27,7 @@ export default function RootLayout({
   return (
     <>
       <html lang="en" className={geistMono.variable}>
-        <body className="font-geist">
+        <body className="font-geist overflow-hidden">
           <Header />
           <main>{children}</main>
           <Footer />
