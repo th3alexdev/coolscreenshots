@@ -1,5 +1,3 @@
-import { useState } from 'react';
-
 const X_PROTOCOL = 'https://x.com/';
 const TWITTER_PROTOCOL = 'https://twitter.com/';
 
