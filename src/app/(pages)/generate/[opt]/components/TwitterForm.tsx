@@ -5,8 +5,7 @@ const TWITTER_PROTOCOL = 'https://twitter.com/';
 
 const HEADERS = {
   headers: {
-    Authorization:
-      'AAAAAAAAAAAAAAAAAAAAAGhFyAEAAAAAXt0F%2FV8GCaIsnkKKu%2B1DRs0vHJU%3Dm1B2pUn8HqRQlneRLoyE97FOHZAC1OeR67UJFHySrMnVhirwlm',
+    Authorization: '.',
   },
 };
 
