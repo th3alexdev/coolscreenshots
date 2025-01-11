@@ -1,43 +1,35 @@
-const X_PROTOCOL = 'https://x.com/';
-const TWITTER_PROTOCOL = 'https://twitter.com/';
+'use client';
 
-const HEADERS = {
-  headers: {
-    Authorization: '.',
-  },
-};
+import {
+  fetchTweetData,
+  getTweetId,
+  isValidTweet,
+} from '@/services/fetchTweet';
+import { useRouter } from 'next/navigation';
+import { useState } from 'react';
+
+const approved = true;
 
 export function TwitterForm() {
+  const router = useRouter();
+  const [data, setData] = useState<any>(null);
+
   const handleInput = async (e: React.FormEvent<HTMLInputElement>) => {
     const value = (e.target as HTMLInputElement).value;
     console.log('value 👉', value);
 
     const link = value;
-    const isValid =
-      link.startsWith(X_PROTOCOL) || link.startsWith(TWITTER_PROTOCOL);
 
-    if (isValid) {
-      console.log('El enlace es válido 👉', link);
+    if (isValidTweet(link)) {
+      const tweetId = getTweetId(value);
+      const tweetData = await fetchTweetData({ tweetId });
 
-      const tweetId = link.split('/status/')[1];
-      console.log('Tweet ID 👉', tweetId);
-
-      const response = await fetch(
-        `https://api.x.com/2/tweets/${tweetId}?tweet.fields=created_at,public_metrics&expansions=author_id&user.fields=username`,
-        HEADERS
-      );
-
-      if (!response.ok) {
-        console.error(
-          'Error al obtener los datos:',
-          response.status,
-          response.statusText
-        );
-        return;
+      if (tweetData) {
+        console.warn('tweet 🚧', tweetData);
+        setData(tweetData);
+        // router.push(`/dashboard?tweetId=${tweetId}`);
+        // router.push(`/dashboard?type=twitter&tweetId=${tweetId}`);
       }
-
-      const tweetData = await response.json();
-      console.log('Información del tweet', tweetData);
     } else {
       console.log('El enlace no es válido');
     }
@@ -64,7 +56,8 @@ export function TwitterForm() {
               <input
                 type="button"
                 value="Generate Screenshot"
-                className="rounded-md bg-main-color hover:bg-main-hover-color transition-colors duration-150 w-full py-2 font-bold text-white pointer"
+                onClick={() => router.push(`/dashboard?tweetId=412412`)}
+                className="rounded-md bg-btn-primary-color hover:bg-btn-primary-hover transition-colors duration-150 w-full py-2 font-bold text-white pointer"
               />
             </form>
           </div>
