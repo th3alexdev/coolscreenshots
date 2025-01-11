@@ -5,19 +5,19 @@ import Image from 'next/image';
 const options = [
   {
     id: 1,
-    href: '',
+    href: '/generate/twitter',
     name: 'Twitter/X Post',
     icon: () => <ICONS.TwitterIcon />,
   },
   {
     id: 2,
-    href: '',
+    href: '/generate/instagram',
     name: 'Instagram Post',
     icon: () => <ICONS.InstagramIcon />,
   },
   {
     id: 3,
-    href: '',
+    href: '/generate/youtube',
     name: 'Youtube Video',
     icon: () => <ICONS.YouTubeIcon />,
   },
@@ -37,7 +37,7 @@ export default function Home() {
           <div className="flex gap-2 7xs:gap-4">
             {options.map((opt) => (
               <Link
-                href="#"
+                href={opt.href}
                 className="px-2 py-2 7xs:px-4 7xs:py-4 text-main-color rounded-xl grid place-items-center hover:bg-[#0015ff10] transition-all duration-300"
                 key={opt.id}
               >
