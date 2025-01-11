@@ -8,7 +8,8 @@ export function Footer() {
         <div className="relative z-40 flex gap-2 w-max bg-white px-2 py-0.5">
           <p className="font-medium">Designed and built by</p>
           <Link
-            href={''}
+            target="_blank"
+            href={'https://bento.me/alexanderperez'}
             className="flex gap-1 grayscale hover:grayscale-0 transition-all duration-100 underline 5xs:hover:underline 5xs:no-underline"
           >
             <span className="font-bold pointer">Alex</span>
