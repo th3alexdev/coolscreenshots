@@ -14,6 +14,28 @@
   }
 }
 
+@layer components {
+  .form-group {
+    @apply w-full flex gap-4 items-center;
+
+    label {
+      @apply text-right font-semibold blink opacity-75;
+    }
+
+    div {
+      @apply flex flex-wrap gap-2;
+    }
+
+    .input-btn {
+      @apply pointer text-sm py-0.5 px-1 rounded-md font-semibold opacity-50;
+    }
+
+    .input-btn--selected {
+      @apply bg-[#22222214] border-[1px] border-[#2222223c];
+    }
+  }
+}
+
 @media (hover: hover) and (pointer: fine) {
   p,
   span,
@@ -25,7 +47,7 @@
   h4,
   h5,
   h6,
-  .text-cursor {
+  .blink {
     cursor: url('/assets/cursor/blink.svg'), text;
   }
 }

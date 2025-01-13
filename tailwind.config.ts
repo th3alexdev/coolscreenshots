@@ -13,6 +13,7 @@ export default {
       },
       colors: {
         'primary-text': '#2222',
+        'snd-text': '#FFF',
         'primary-color': '#0015FF',
         'primary-light': '#d4d7ff',
         'primary-hover': '#515FFF',
@@ -21,6 +22,7 @@ export default {
         'snd-hover': '#E0E7FF',
         'thd-hover': '#0015ff10',
         'footer-bg': '#F5F5F5',
+        'dashboard-bg': '#f4f4f4',
       },
       backgroundImage: {
         'gradient-bg': "url('/svg/gradient-bg.svg')",
