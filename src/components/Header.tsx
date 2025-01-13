@@ -23,7 +23,7 @@ const items: MenuProps['items'] = [
 
 export function Header() {
   return (
-    <header className="py-10 px-8 text- xl w-full outline-none outline-[#0000001c]">
+    <header className="relative z-50 py-10 px-8 text- xl w-full border-separate">
       <div className="flex justify-between max-w-[950px] mx-auto">
         <Image
           className="w-36 pointer-events-none"
