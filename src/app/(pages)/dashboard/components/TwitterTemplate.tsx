@@ -4,27 +4,41 @@ import {
   TwitterIcon,
   XIcon,
 } from './TemplateIcons';
-import { TweetData } from '@/types/dashboard.types';
+import {
+  FontOption,
+  LogoOption,
+  PaddingOption,
+  ThemeOption,
+  TweetData,
+} from '@/types/dashboard.types';
 
-export default function TwitterTemplate({
-  data,
-  theme,
-  padding,
-  logo,
-}: {
+interface TwitterTemplateProps {
   data: TweetData;
-  theme: any;
-  padding: any;
-  logo: any;
-}) {
-  const { user, tweet, media } = data;
+  theme: ThemeOption;
+  padding: PaddingOption;
+  logo: LogoOption;
+  font: FontOption;
+  backgroundColor?: string;
+}
+
+export default function TwitterTemplate(props: TwitterTemplateProps) {
+  const {
+    data: { user, tweet, media },
+    theme,
+    padding,
+    logo,
+    font,
+    backgroundColor,
+  } = props;
 
   return (
     <div
       className={`${
-        theme === 'Light' ? 'bg-[white] text-[#222]' : 'bg-[#010101] text-white'
+        theme === 'light' ? 'bg-[white] text-[#222]' : 'bg-[#010101] text-white'
       } w-full h-max max-w-[350px] px-3 py-4 rounded-lg shadow-2xl shadow-[#22222219]`}
-      style={{ padding: `${padding}px` }} // Aquí aplicamos el padding dinámico
+      style={{
+        padding: `${padding}px`,
+      }}
     >
       <header className="relative py-1 flex gap-x-3">
         <div className="w-full max-w-[50px]">
@@ -61,7 +75,11 @@ export default function TwitterTemplate({
         </div>
         <p className="text-sm opacity-75">{tweet.timestamp}</p>
       </main>
-      <div className="w-full h-[0.5px] bg-[#00000023] my-0.5"></div>
+      <div
+        className={`w-full h-[0.5px]  my-0.5 ${
+          theme === 'light' ? 'bg-[#00000023]' : 'bg-[#ffffff23]'
+        }`}
+      ></div>
       <footer className="pt-3 opacity-75 flex gap-2">
         <div className="gap-1 flex items-center">
           <TweetLikeIcon />
