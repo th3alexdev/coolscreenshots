@@ -67,3 +67,11 @@
     cursor: url('/assets/cursor/pointer.svg'), pointer !important;
   }
 }
+
+input[type='color'] {
+  background: '#fff';
+  border-width: 0;
+  border-style: none;
+  border-color: transparent;
+  padding: 0 0;
+}
